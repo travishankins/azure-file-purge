@@ -1,4 +1,4 @@
-````markdown
+
 # 🧹 Azure File Share Purge Script  
 `Purge-AzFileShare.ps1`
 
