@@ -4,15 +4,6 @@
 
 Deletes files **older than _N_ days** (optionally within a specific sub-folder) from an Azure File Share.
 
-<div align="center">
-
-[![PowerShell 7+](https://img.shields.io/badge/PowerShell-7%2B-blue?logo=powershell&logoColor=white)](https://learn.microsoft.com/powershell/)  
-[![Azure CLI 2.60+](https://img.shields.io/badge/Azure%20CLI-2.60%2B-blue?logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/cli/azure/)  
-[![Issues](https://img.shields.io/github/issues/travishankins/azure-file-purge)](https://github.com/travishankins/azure-file-purge/issues)  
-[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](#-license)
-
-</div>
-
 ---
 
 ## ✨ Highlights
