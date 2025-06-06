@@ -97,14 +97,6 @@ Remove `-WhatIf` once the preview looks correct.
 
 ---
 
-## 🔐 Security best practices
-
-* Prefer **AAD / Managed Identity** – add `--auth-mode login` inside the script
-* Keep keys in **Key Vault**, GitHub **Secrets**, or Automation secure variables
-* Enable **share soft-delete** or Azure Backup snapshots before production runs
-
----
-
 ## 🤝 Contributing
 
 PRs welcome! Ideas:
@@ -113,12 +105,4 @@ PRs welcome! Ideas:
 * Exclusion patterns / globbing
 * Output to CSV or Log Analytics
 
----
 
-## 📄 License
-
-MIT — see [LICENSE](LICENSE)
-
-```
-::contentReference[oaicite:0]{index=0}
-```
