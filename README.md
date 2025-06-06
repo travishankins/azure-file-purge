@@ -1,4 +1,4 @@
-Here’s an updated **README.md** that adds a concise “Get a Storage-Account Key with Azure CLI” section under **Quick start**.
+**Quick start**.
 
 ````markdown
 # Azure File Share Purge Script (`Purge-AzFileShare.ps1`)
