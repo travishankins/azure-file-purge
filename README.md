@@ -9,13 +9,14 @@ Deletes files **older than _N_ days** (optionally within a specific sub-folder) 
 ## ✨ Highlights
 
 |    | Feature |
-|----|---------|
-| 🚀 **Scales** to tens of millions of objects – streams 5 000 entries/page & handles continuation tokens |
-| 🌳 **Recursive** by default; optionally start lower via `-StartPath` |
-| ⚡ **Parallel deletes** (configurable) for high throughput |
-| 🔍 **`-WhatIf`** mode prints paths **without deleting** |
-| ♻️ **Resume-safe** – rerun any time; already-deleted files are skipped |
-| 🔐 Works with **Shared Key** *or* **Azure AD / Managed Identity** authentication |
+| :- | :------ |
+| 🚀 | **Scales** to tens of millions of objects – streams 5 000 entries/page & handles continuation tokens |
+| 🌳 | **Recursive** by default; optionally start lower via `-StartPath` |
+| ⚡ | **Parallel deletes** (configurable) for high throughput |
+| 🔍 | **`-WhatIf`** mode prints paths **without deleting** |
+| ♻️ | **Resume-safe** – rerun any time; already-deleted files are skipped |
+| 🔐 | Works with **Shared Key** *or* **Azure AD / Managed Identity** authentication |
+
 
 ---
 
