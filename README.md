@@ -148,7 +148,7 @@ PRs welcome! Ideas:
 
 ---
 
-## 📄 License
+## ⚖️ License
 
 This project is licensed under the terms of the [MIT](LICENSE) license.
 See the [LICENSE](LICENSE) file for details.
