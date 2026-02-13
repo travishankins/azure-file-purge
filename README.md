@@ -20,6 +20,29 @@ Deletes files **older than _N_ days** (optionally within a specific sub-folder) 
 
 ---
 
+## 🔄 How It Works
+
+```
+┌──────────────┐     ┌──────────────────┐     ┌───────────────┐
+│ Authenticate │────▶│ Recursive walk   │────▶│ Delete / log  │
+└──────────────┘     └──────────────────┘     └───────────────┘
+```
+
+1. **Authenticate** — reads `AZURE_STORAGE_KEY` from the environment, or
+   auto-retrieves it via `az storage account keys list`.
+2. **Walk** — recursively lists every directory in the share (or below
+   `-StartPath`) in pages of `-PageSize` entries, following continuation
+   tokens until every file has been visited.
+3. **Filter** — each file's `lastModified` timestamp is compared against the
+   cut-off date (`now − Days`).
+4. **Delete or preview** — matched files are either printed (`-WhatIf`) or
+   dispatched for deletion through a semaphore-bounded thread pool
+   (`-MaxConcurrent` workers).
+5. **Summarise** — after all tasks complete, a final count of matched /
+   deleted files is printed.
+
+---
+
 ## 🛠️ Prerequisites
 
 | Requirement | Notes |
@@ -70,6 +93,24 @@ export AZURE_STORAGE_KEY=<PASTE-KEY-HERE>
 
 Remove `-WhatIf` once the preview looks correct.
 
+### 4 — 📋 Example dry-run output
+
+```
+Starting purge for //myaccount/myshare | Older than 45 days (cut-off 2025-04-01 00:00:00)
+logs/2025-01/app.log                   [WOULD be deleted]
+logs/2025-02/app.log                   [WOULD be deleted]
+logs/2025-03/app.log                   [WOULD be deleted]
+backups/2025-02-14/db.bak              [WOULD be deleted]
+backups/2025-03-01/db.bak              [WOULD be deleted]
+----------
+Matched  : 5
+Deleted  : 0
+NOTE: -WhatIf used – no files actually removed.
+```
+
+Once you remove `-WhatIf`, the script deletes the matched files in parallel
+and the `Deleted` counter will reflect the actual removals.
+
 ---
 
 ## ⚙️ Parameters
@@ -105,4 +146,10 @@ PRs welcome! Ideas:
 * Exclusion patterns / globbing
 * Output to CSV or Log Analytics
 
+---
+
+## 📄 License
+
+This project is licensed under the terms of the [MIT](LICENSE) license.
+See the [LICENSE](LICENSE) file for details.
 
